@@ -1,6 +1,5 @@
 // NEED CONFIRMATION FOR ANY ACTION
 import { AnyAction } from 'redux';
-import { initialState } from '../objects/user';
 
 // const counterReducer = (state = initialState, action: AnyAction) => {
 const counterReducer = (state = 0, action: AnyAction) => {

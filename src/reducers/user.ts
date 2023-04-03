@@ -2,7 +2,7 @@ import React from 'react';
 import { SET_USER } from '../actions/user';
 // NEED CONFIRMATION FOR ANY ACTION
 import { AnyAction } from 'redux';
-import { initialState, User } from '../objects/user';
+import { User } from '../objects/user';
 
 const userReducer = (state = new User(), action: AnyAction) => {
     switch (action.type) {

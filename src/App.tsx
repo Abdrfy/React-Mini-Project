@@ -4,7 +4,8 @@ import { increment } from './actions';
 import { decrement } from './actions';
 import { switchLoggedState } from './actions';
 import { getUser } from './actions/user';
-import { RootState, User } from './objects/user';
+import { User } from './objects/user';
+import { RootState } from './redux/states/RootState';
 
 function App() {
     //TEST CODE - NOT WORKING

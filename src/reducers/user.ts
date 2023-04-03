@@ -1,21 +1,18 @@
-import React from "react"
-import { SET_USER } from "../actions/user"
-// NEED CONFIRMATION FOR ANY ACTION 
-import { AnyAction } from "redux"
-import { User } from "../objects/user"
+import React from 'react';
+import { SET_USER } from '../actions/user';
+// NEED CONFIRMATION FOR ANY ACTION
+import { AnyAction } from 'redux';
+import { initialState, User } from '../objects/user';
 
-const initialState = {
-    user: User
-}
-
-const userReducer = ( state = initialState, action: AnyAction) => {
+const userReducer = (state = new User(), action: AnyAction) => {
     switch (action.type) {
         case SET_USER:
-            const { user } = action
-            return  { ...state, user } 
+            const user = action.payload;
+            console.log('userReducer ', user);
+            return user;
         default:
-            return state
+            return state;
     }
-}
+};
 
-export default userReducer
+export default userReducer;

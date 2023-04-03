@@ -4,18 +4,14 @@ import { increment } from './actions';
 import { decrement } from './actions';
 import { switchLoggedState } from './actions';
 import { getUser } from './actions/user';
-import { User } from './objects/user';
+import { RootState, User } from './objects/user';
 
 function App() {
     //TEST CODE - NOT WORKING
-    interface RootState {
-        user: User;
-        numValue: number;
-        boolValue: boolean;
-    }
 
-    const counter = useSelector<RootState, number>((state) => state.numValue);
-    const isLogged = useSelector<RootState, boolean>((state) => state.boolValue);
+    const state = useSelector((state: RootState) => state);
+    const counter = useSelector((state: RootState) => state.counter);
+    const isLogged = useSelector<RootState, boolean>((state) => state.isLogged);
     const user = useSelector((state: RootState) => state.user);
     const dispatch = useDispatch();
 
@@ -23,7 +19,9 @@ function App() {
         dispatch(getUser());
     }, []);
 
-    console.log('userFirstName: ', user);
+    console.log('state', state);
+    console.log('counter:', counter);
+    console.log('userFirstName: ', user?.firstname);
 
     return (
         <div className="App">
